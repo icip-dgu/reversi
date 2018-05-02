@@ -3,17 +3,21 @@ import unittest
 
 class TestReversedString(unittest.TestCase):
 
+    string_testcase_1 = "the sky is blue"
+    string_testcase_2 = "     the    sky is    blue      "
+    expected = "blue is sky the"
+
     def test_reverse_string(self):
-        given_str = "the sky is blue"
-        expected = "blue is sky the"
-        result = reverse_string(given_str)
-        self.assertEqual(expected, result)
+        result_t1 = reverse_string(self.string_testcase_1)
+        result_t2 = reverse_string(self.string_testcase_2)
+        self.assertEqual(self.expected, result_t1)
+        self.assertEqual(self.expected, result_t2)
 
     def test_verbose_reverse(self):
-        given_str = "the sky is blue"
-        expected = "blue is sky the"
-        result = verbose_reverse(given_str)
-        self.assertEqual(expected, result)
+        result_t1 = verbose_reverse(self.string_testcase_1)
+        result_t2 = verbose_reverse(self.string_testcase_2)
+        self.assertEqual(self.expected, result_t1)
+        self.assertEqual(self.expected, result_t2)
 
 
 def reverse_string(str):
