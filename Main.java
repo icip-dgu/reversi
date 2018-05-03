@@ -1,13 +1,3 @@
-/* Testcase Input
-* "   the sky is blue   "
-* "   the sky     is blue"
-* "the sky is blue"
-* " the sky is   blue "
-*/
-
-/* Testcase Output
-* "blue is sky the"
-*/
 package week2_0426;
 
 import java.util.Scanner;
@@ -18,7 +8,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         Stack stack = pushIntoStack(input);
-        print(stack);
+        String result = getResult(stack);
+        System.out.println(result);
         scanner.close();
     }
 
@@ -52,15 +43,18 @@ public class Main {
     }
 
     //print result string
-    public static void print(Stack stack) {
+    public static String getResult(Stack stack) {
         int stackSize = stack.size();
+        String result = "";
         for (int i = 0; i < stackSize; i++) {
             if (i + 1 == stackSize) {
-                System.out.print(stack.pop());
+                result += stack.pop();
             } else {
-                System.out.print(stack.pop() + " ");
+                result += stack.pop() + " ";
             }
         }
+        return result;
+
     }
 
 }
