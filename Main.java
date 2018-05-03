@@ -1,4 +1,13 @@
-//kojunhee
+/* Testcase Input
+* "   the sky is blue   "
+* "   the sky     is blue"
+* "the sky is blue"
+* " the sky is   blue "
+*/
+
+/* Testcase Output
+* "blue is sky the"
+*/
 package week2_0426;
 
 import java.util.Scanner;
